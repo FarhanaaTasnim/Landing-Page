@@ -42,18 +42,21 @@
 .hero-section{
   position: relative;
   padding: 4rem 1rem;
-  overflow: hidden; 
+  /* overflow: hidden;  */
   text-align: center;
+  border-top: 1px solid transparent;
   
 }
   
 
-.hero-section.section_heading {
+.hero-section .section-heading {
   font-size: 60px;
   font-weight: 500;
   color: var(--heading-color);
-  font-family:'';
+  
+  /* margin-top: 0;  */
 }
+
 .hero-section.section_subheading {
     font-size: 30px;
     font-weight: 700;
@@ -62,6 +65,7 @@
   }
   .hero-section .hero{
     z-index: 1;
+    margin-top:15%;
   }
 
 
@@ -96,42 +100,30 @@
   outline: none;
 }
 
-.growth-card {
- 
-  top: 20%;
-  left: 10%;
+.growth-card, .client-card {
   position: absolute;
   background: white;
   border-radius: 0.75rem;
   padding: 0.5rem 0.75rem;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size:0.8rem;
-  
-  transform: translate(-50%, -50%);
-  
-  z-index: 1;
+  font-size: 0.8rem;
+  max-width: 220px;
+  z-index: 2;
 }
 
+.growth-card {
+  top: 20%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}
 
 .client-card {
-  position: absolute;
-  top: 75%;
-  left: 15%;
-  background: white;
-  border-radius: 0.75rem;
-  padding: 0.5rem 0.75rem;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size:0.8rem;
-  max-width:200px;
-  transform: translate(-50%, -50%);
-  
-  z-index: 1;
+  bottom: 20%;
+  left: 25%;
+  transform: translate(-50%, 50%);
 }
 
 
@@ -175,17 +167,7 @@ margin-bottom: 0.25rem;
 color: #888 !important;
 }
 
-.doodle-image {
-  position: absolute;
-  top: 40%;              
-  left: 15%;             
-  transform: translate(-50%, -50%);
-  width: 150px;          
-  height: 150px;;
-  z-index: 0;           
-  pointer-events: none; 
-  background-color: white;
-}
+
 
 .service-section{
   padding-top:10%;
@@ -335,10 +317,7 @@ color: #888 !important;
     font-size: 0.9rem;
   }
   
-  /* .footer-logo {
-    /* max-height: 80%;
-    max-width: 80%;} */
-   
+ 
   
   .text-orange {
     color: #ff6600;
@@ -360,39 +339,10 @@ color: #888 !important;
   }
   
   @media (max-width: 768px) {
-    .growth-card {
-      top: auto;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      position: absolute;
-      font-size: 0.75rem;
-      padding: 0.5rem 0.75rem;
-      width: 90%;
-      max-width: 300px;
-      bottom: 6rem;
-    }
-    .client-card {
-      top: auto;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      position: absolute;
-      font-size: 0.75rem;
-      padding: 0.5rem 0.75rem;
-      width: 90%;
-      max-width: 300px;
-      bottom: 2rem;
-    }
-    .doodle-image {
-      top: auto;
-      bottom: 10rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 80px;
-      background-color: transparent !important;
-     }
+   .growth-card,
+  .client-card {
+    display: none;
+  }
     .section-heading {
       font-size: 1.5rem;
 
@@ -402,6 +352,7 @@ color: #888 !important;
       text-align: center;
       padding-top: 0;
     }
+    
   
     .btn-get-started,
     .btn-learn-more {
